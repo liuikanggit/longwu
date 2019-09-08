@@ -28,11 +28,14 @@ export default new Router({
       name: 'show',
       component: () => import('./views/Show.vue')
     },{
+      path: '/active',
+      name: 'active',
+      component: () => import('./views/Active.vue')
+    },{
       path: '/resume',
       name: 'resume',
       component: () => import('./views/Resume.vue')
-    },
-    {
+    },{
       path: '/message',
       name: 'message',
       component: () => import('./views/Message.vue')

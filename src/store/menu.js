@@ -102,23 +102,92 @@ const menu = [
         }]
     },{
         id:5,
-        name:'招聘兼职',
-        route:'/resume',
+        name:'最新活动',
+        route:'/active',
         subMenu:[{
-            id:'501',
+            id:'500',
             name:'招聘兼职',
             tab:'recruit',
         },{
-            id:'502',
+            id:'501',
             name:'行业资讯',
             tab:'information',
         }]
     },{
         id:6,
+        name:'招聘兼职',
+        route:'/resume',
+        subMenu:[{
+            id:'600',
+            name:'礼仪模特',
+            tab:'lymt',
+        },{
+            id:'601',
+            name:'活动充场',
+            tab:'hdcc',
+        },{
+            id:'602',
+            name:'平拍网拍',
+            tab:'ppwp',
+        },{
+            id:'603',
+            name:'局部模特',
+            tab:'jbmt',
+        },{
+            id:'604',
+            name:'书画展',
+            tab:'shz',
+        },{
+            id:'605',
+            name:'人偶装扮',
+            tab:'information',
+        },{
+            id:'606',
+            name:'COSPLAY装扮',
+            tab:'cosplay',
+        },{
+            id:'607',
+            name:'群众演员',
+            tab:'qzyy',
+        },{
+            id:'608',
+            name:'平面模特',
+            tab:'pmmt',
+        },{
+            id:'609',
+            name:'影视演员',
+            tab:'ysyy',
+        },{
+            id:'610',
+            name:'现场协助',
+            tab:'xcxz',
+        },{
+            id:'611',
+            name:'舞蹈演员',
+            tab:'wdyy',
+        },{
+            id:'612',
+            name:'摄影化妆',
+            tab:'syhz',
+        },{
+            id:'613',
+            name:'单双语礼仪',
+            tab:'dsyly',
+        },{
+            id:'614',
+            name:'演唱会及粉丝',
+            tab:'ychjfs',
+        },{
+            id:'615',
+            name:'演出歌手',
+            tab:'ycgs',
+        }]
+    },{
+        id:7,
         name:'在线留言',
         route:'/message'
     },{
-        id:7,
+        id:8,
         name:'联系我们',
         route:'/contact'
     }

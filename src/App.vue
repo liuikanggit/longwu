@@ -10,7 +10,7 @@
               <div class="sub-menu-list">
                 <template v-if="m1.subMenu">
                   <div  v-for="m2 in m1.subMenu.slice(0,8)" :key="m2.id" class="sub-menu-item" >
-                    <router-link :class="{'active':routePath == m2.route}" :to="m1.route + '?tab=' + m2.tab"> {{m2.name}}</router-link>
+                    <router-link :class="{'active':routePath == m2.route}" :to="m1.route"> {{m2.name}}</router-link>
                   </div>
                 </template>
               </div>
@@ -21,6 +21,48 @@
         <Swiper :images="images"></Swiper>
     </div>
     <router-view/>
+    <div class="footer min-width">
+      <div class="part1">
+        <div class="link">
+          <div class="col" v-for="m in menu.slice(1,6)" :key="m.id">
+            <div class="title">{{m.name}}</div>
+            <template v-if="m.subMenu">
+                <router-link class="content" v-for="m2 in m.subMenu.slice(0,3)" :key="m2.id" :class="{'active':routePath == m2.route}" :to="m.route"> {{m2.name}}</router-link>
+            </template>
+          </div>
+        </div>
+        <div class="conect">
+          <div class="QRcode">
+              <div class="image"><img src="@/assets/images/base/weixin.jpg" alt="二维码"></div>
+              <div class="text">微信扫码关注</div>
+          </div>
+          <div class="form">
+            <div class="col">
+              <input class="input" type="text" placeholder="姓名:">
+            </div>
+            <div class="col">
+              <input class="input" type="text" placeholder="电话:">
+            </div>
+            <div class="col">
+              <input class="input" type="text" placeholder="留言:">
+              <div class="btn">提交</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="part2">
+          <div class="info">
+            <div class="col">上海龙吾文化传播有限公司</div>
+            <div class="col">地址：上海市徐汇区飞雕国际大厦1302室</div>
+            <div class="col">手机号/微信：18516241996   QQ：1709734280 邮箱：1709734280@qq.com</div>
+          </div>
+          <div class="info right">
+            <div>copyright ©上海龙吾文化传播有限公司</div>
+            <div>沪ICP备18152928号-1</div>
+            <div class="col">技术支持：HEO科技有限公司</div>
+          </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,7 +95,7 @@ export default {
 </script>
 
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 #app
   position relative
   background #fff
@@ -64,23 +106,26 @@ export default {
     align-items center
     justify-content space-between
     .logo
-      padding 0px 5px 0px 10px
+      padding 0px 0px 0px 0px
     .menu
       display flex
       height 100%
-      font-size 17px
-      margin-right 30px
       align-items center
+      flex-grow 1
+      justify-content center
       .menu-item:hover>.sub-menu-list
         max-height 1000px !important
+      .menu-item:last-child>.menu1
+        border-right none
       .menu-item
-        padding 0px 5px
         height 100%
         cursor pointer
         align-items center
-        color #333
+        font-size 15px
         .menu1
           color #070002
+          padding 5px 8px
+          border-right 1px solid rgba(200,200,180,0.5)
         :hover
           color #666666
         .active
@@ -97,10 +142,90 @@ export default {
           .sub-menu-item
             display block
             background #fff
-            margin 2px 0px
+            margin-bottom 4px
             padding 5px
             font-size 14px
             text-align center
   .banner
     background #fff
+  .footer
+    background-color #151515
+    flex-direction column
+    .part1
+      padding 30px 20px
+      width 100%
+      border-bottom 1px solid rgba(200,200,200,.1)
+      .link
+        border-right 1px solid rgba(200,200,200,.1)
+        .col
+          flex-direction column
+          margin-right 50px
+          width 65px
+          .title
+            font-size 16px
+            color #fff
+            font-family inherit
+            font-weight 500
+            line-height 1.1
+            margin-bottom 16px
+            cursor pointer
+          .content
+            font-size 14px
+            color #696969
+            margin-bottom 16px
+            display block
+      .conect
+        justify-content space-around
+        align-items center
+        flex-grow 1
+        .QRcode
+          flex-direction column
+          margin 0 28px
+          .image
+            width 115px
+            height 115px
+          .text
+            font-size 14px
+            color #696969
+            margin-top 8px
+            display block
+            text-align center
+        .form
+          flex-direction column
+          flex-grow 1
+          .col
+            margin-bottom 10px
+            .input
+              width 100%
+              line-height 40px
+              border 1px solid #3a3a3a
+              color #838384
+              padding 0 10px
+              background none
+            .btn
+              position absolute
+              right 0
+              top 0
+              bottom 0
+              width 48px
+              background #333333
+              color #696969
+              align-items center
+              justify-content center
+              cursor pointer
+        .col:last-child
+          margin-bottom 0px
+    .part2
+      justify-content space-between
+      line-height 25px
+      font-size 14px
+      color #696969
+      padding 30px 20px
+      width 100%
+      .info
+        flex-direction column
+        .col
+          display block
+      .right
+        align-items flex-end
 </style>

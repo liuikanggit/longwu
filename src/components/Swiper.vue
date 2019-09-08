@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scope>
+<style lang="stylus" scoped>
 .swiper
     display block
     width 100%
