@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { setTimeout, setInterval, clearInterval } from 'timers';
 
 export default {
     props:{

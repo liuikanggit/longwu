@@ -32,7 +32,9 @@ export default {
      }
   },
   data(){
-    return require('')
+    return {
+      
+    }
   },
   components: {
     Title,
