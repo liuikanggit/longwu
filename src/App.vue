@@ -63,12 +63,14 @@
           </div>
       </div>
     </div>
+    <SideTool></SideTool>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex' 
 import Swiper from '@/components/Swiper.vue'
+import SideTool from '@/components/SideTool.vue'
 
 export default {
   data(){
@@ -87,7 +89,8 @@ export default {
     }
   },
   components:{
-      Swiper
+      Swiper,
+      SideTool
   },
   created(){
   }
@@ -105,6 +108,7 @@ export default {
     display flex
     align-items center
     justify-content space-between
+    margin 0 auto
     .logo
       padding 0px 0px 0px 0px
     .menu
@@ -157,9 +161,11 @@ export default {
       border-bottom 1px solid rgba(200,200,200,.1)
       .link
         border-right 1px solid rgba(200,200,200,.1)
+        flex-grow 1
+        padding-right 50px
+        justify-content space-between
         .col
           flex-direction column
-          margin-right 50px
           width 65px
           .title
             font-size 16px
